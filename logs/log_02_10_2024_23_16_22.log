@@ -1,0 +1,25 @@
+[2024-02-10 23:16:22,669] root -INFO -Reading Dataset
+[2024-02-10 23:16:22,705] root -INFO -Copy data into raw dataset folder
+[2024-02-10 23:16:22,724] root -INFO -Succefully copied data into ingestion folder
+[2024-02-10 23:16:22,730] root -INFO -Read Traning And Test Data Complited
+[2024-02-10 23:16:22,735] root -INFO -Train Dataframe Head : 
+   Unnamed: 0  Company   TypeName  Inches ScreenResolution  Ram    OpSys  Weight  Touchscreen  IPS_panel      Cpu_brand   SSD   HDD  FlashStorage Gpu_brand     Price
+0         507     Acer   Notebook    15.6        1920x1080    4  Windows    2.20            0          1  Intel Core i5     0  1000             0    Nvidia   55170.0
+1        1210    Apple  Ultrabook    12.0        2304x1440    8      Mac    0.92            0          1    Other Intel     0     0           512     Intel  115110.0
+2         247     Asus     Gaming    17.3        1920x1080   16  Windows    3.60            0          0  Intel Core i7   256     0             0    Nvidia  269910.0
+3        1199      MSI     Gaming    17.3        1920x1080   16  Windows    2.43            0          0  Intel Core i7  1256  1000             0    Nvidia  184401.0
+4         983  Fujitsu   Notebook    15.6         1366x768    4  Windows    2.30            0          0  Intel Core i5   256     0             0     Intel   58410.0
+[2024-02-10 23:16:22,738] root -INFO -Test Dataframe Head  : 
+  Company            TypeName  Inches ScreenResolution  Ram    OpSys  Weight  Touchscreen  IPS_panel      Cpu_brand  SSD   HDD  FlashStorage Gpu_brand     Price
+0    Dell            Notebook    14.0        1920x1080    8  Windows    1.60            0          0  Intel Core i5  128     0             0     Intel  100710.0
+1    Dell  2 in 1 Convertible    13.3        1920x1080    8  Windows    1.62            1          0  Intel Core i7  256     0             0     Intel   71820.9
+2      HP            Notebook    15.6         1366x768    6  Windows    2.19            0          0  Intel Core i7    0  1000             0       AMD   68760.0
+3    Dell            Notebook    15.6         1366x768    6  Windows    2.30            0          0  Intel Core i3    0  1000             0     Intel   41310.0
+4  Lenovo            Notebook    15.6        1920x1080    8  Windows    2.30            0          0  Intel Core i5  256     0             0     Intel  121410.0
+[2024-02-10 23:16:22,738] root -INFO -Obtaining Preprosser object
+[2024-02-10 23:16:22,738] root -INFO -Data Transformation Initated
+[2024-02-10 23:16:22,739] root -INFO -Processor created
+[2024-02-10 23:16:22,763] root -INFO -Apply Preprocessor Object on train and test Data
+[2024-02-10 23:16:22,816] root -INFO -Preprocessor Object File is Save
+[2024-02-10 23:16:22,817] root -INFO -Split Dependent And Independent Features
+[2024-02-10 23:17:41,894] root -INFO -Best Model Found, Model Name is: GradientBoostingRegressor,Accuracy_Score: 0.8110756061767739

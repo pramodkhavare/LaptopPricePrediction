@@ -1,0 +1,231 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Prediction</title>
+    <div style="background-image: url(https://www.extremetech.com/wp-content/uploads/2020/10/Surface-Laptop-Go-Colors-640x571.jpg);">
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h3><a class="navbar-brand" href="/">Laptop Price Prediction BY Pramod Khavare</a></h3>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+        <form action="{{ url_for('predict_datapoint') }}" method="POST">
+            <h1>Welcome to Laptop Price Prediction</h1>
+            <div class="form-group">
+                <label for="Company">Company:</label>
+                <select id="Company" name="Company">
+                    <option value="Apple">Apple</option>
+                    <option value="HP">HP</option>
+                    <option value="Acer">Acer</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Dell">Dell</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="Chuwi">Chuwi</option>
+                    <option value="MSI">MSI</option>
+                    <option value="Microsoft">Microsoft</option>
+                    <option value="Toshiba">Toshiba</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Vero">Vero</option>
+                    <option value="Razer">Razer</option>
+                    <option value="Mediacom">Mediacom</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Google">Google</option>
+                    <option value="Fujitsu">Fujitsu</option>
+                    <option value="LG">LG</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="TypeName">TypeName:</label>
+                <select id="TypeName" name="TypeName">
+                    <option value="Ultrabook">Ultrabook</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Netbook">Netbook</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="2 in 1 Convertible">2 in 1 Convertible</option>
+                    <option value="Workstation">Workstation</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="OpSys">Operating System:</label>
+                <select id="OpSys" name="OpSys">
+                    <option value="Mac">Mac</option>
+                    <option value="Others/No OS/Linux">Others/No OS/Linux</option>
+                    <option value="Windows">Windows</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Cpu_brand">Cpu Brand:</label>
+                <select id="Cpu_brand" name="Cpu_brand">
+                    <option value="Intel Core i7">Intel Core i7</option>
+                    <option value="Intel Core i5">Intel Core i5</option>
+                    <option value="Intel Core i3">Intel Core i3</option>
+                    <option value="Other Intel Processor">Other Intel Processor</option>
+                    <option value="AMD Processor">AMD Processor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Gpu_brand">Gpu Brand:</label>
+                <select id="Gpu_brand" name="Gpu_brand">
+                    <option value="Nvidia">Nvidia</option>
+                    <option value="Intel">Intel</option>
+                    <option value="AMD">AMD</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Ram">Ram in GB:</label>
+                <input type="text" id="Ram" name="Ram" placeholder="Enter value (float)">
+            </div>
+            
+            
+
+            <div class="form-group">
+                <label for="Weight">Weight:</label>
+                <input type="text" id="Weight" name="Weight" placeholder="Enter value (float)">
+            </div>
+
+            <div class="form-group">
+                <label for="Inches">Inches:</label>
+                <input type="text" id="Inches" name="Inches" placeholder="Enter value (float)">
+            </div>
+
+            <div class="form-group">
+                <label for="FlashStorage">FlashStorage of laptop:</label>
+                <input type="text" id="FlashStorage" name="FlashStorage" placeholder="Enter value (float)">
+            </div>
+
+
+            <div class="form-group">
+                <label for="Touchscreen">Touchscreen:</label>
+                <select id="Touchscreen" name="Touchscreen">
+                    <option value="0">NO</option>
+                    <option value="1">YES</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="IPS_panel">IPS Panel:</label>
+                <select id="IPS_panel" name="IPS_panel">
+                    <option value="0">NO</option>
+                    <option value="1">YES</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="SSD">Solid State Drive:</label>
+                <select id="SSD" name="SSD">
+                    <option value="0">0</option>
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                    <option value="32">32</option>
+                    <option value="64">64</option>
+                    <option value="128">128</option>
+                    <option value="180">180</option>
+                    <option value="240">240</option>
+                    <option value="256">256</option>
+                    <option value="512">512</option>
+                    <option value="768">768</option>
+                    <option value="1000">1000</option>
+                    <option value="1024">1024</option>   
+                </select>
+            </div>
+        
+
+            <div class="form-group">
+                <label for="ScreenResolution">ScreenResolution:</label>
+                <select id="ScreenResolution" name="ScreenResolution">
+                    <option value="2560x1600">2560x1600</option>
+                    <option value="1440x900">1440x900</option>
+                    <option value="1920x1080">1920x1080</option>
+                    <option value="2880x1800">2880x1800</option>
+                    <option value="1366x768">1366x768</option>
+                    <option value="2304x1440">2304x1440</option>
+                    <option value="3200x1800">3200x1800</option>
+                    <option value="1920x1200">1920x1200</option>
+                    <option value="2256x1504">2256x1504</option>
+                    <option value="3840x2160">3840x2160</option>
+                    <option value="2160x1440">2160x1440</option>
+                    <option value="2560x1440">2560x1440</option>
+                    <option value="1600x900">1600x900</option>   
+                    <option value="2736x1824">2736x1824</option>   
+                    <option value="2400x1600">2400x1600</option>      
+                </select>
+            </div>
+        
+            
+            
+
+            <div class="form-group">
+                <label for="HDD">Hard Drive:</label>
+                <select id="HDD" name="HDD">
+                    <option value="0">0</option>
+                    <option value="32">32</option>
+                    <option value="128">128</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                </select>
+            </div>
+
+            
+            
+<!-- Submit -->
+<input type="submit" value="Predict" class="btn btn-secondary">
+</form>
+
+<br>
+<br>
+<h3 style="color: black">{{ final_result }}</h3>
+
+<br>
+<br>
+<p>Pramod Khavare</p>
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
+
+
+            
