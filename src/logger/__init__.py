@@ -12,6 +12,7 @@ os.makedirs(LOG_DIR , exist_ok=True)
 #example :- log_2024-1-1-12-2-20.log
 
 CURRENT_TIME_STAMP = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}"
+
 file_name = f"log_{CURRENT_TIME_STAMP}.log"
 
 log_file_path = os.path.join(LOG_DIR , file_name)

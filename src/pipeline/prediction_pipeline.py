@@ -6,7 +6,7 @@ from src.exception import CustomException
 
 
 
-    
+
     
 class CustomData():
     def __init__(self ,
